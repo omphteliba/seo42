@@ -71,6 +71,15 @@ if (rex_post('saveseo', 'boolean')) {
 		$sql->setValue('seo_noindex',  '');
 	}
 
+	// extra stuff
+	$titleAttribute = rexseo42_utils::sanitizeString(rex_post('seo_title_attribute'));
+	$altAttribute = rexseo42_utils::sanitizeString(rex_post('seo_alt_attribute'));
+	$menuTitle = rexseo42_utils::sanitizeString(rex_post('seo_menu_title'));
+
+	$sql->setValue('seo_title_attribute', $titleAttribute);
+	$sql->setValue('seo_alt_attribute', $altAttribute);
+	$sql->setValue('seo_menu_title', $menuTitle);
+
 	// do db update
 	if ($sql->update()) {
 		// info msg
@@ -161,6 +170,27 @@ echo '
 								<p class="rex-form-text">
 									<label for="canonical-url">' . $I18N->msg('rexseo42_seopage_canonical_url') . '</label>
 									<input type="text" value="' . $seoData['seo_canonical_url'] . '" name="seo_canonical_url" id="canonical-url" class="rex-form-text" />
+								</p>
+							</div>
+
+							<div class="rex-form-row">
+								<p class="rex-form-text">
+									<label for="seo_menu_title">' . $I18N->msg('rexseo42_seopage_menu_title') . '</label>
+									<input type="text" value="' . $seoData['seo_menu_title'] . '" name="seo_menu_title" id="seo_menu_title" class="rex-form-text" />
+								</p>
+							</div>
+
+							<div class="rex-form-row">
+								<p class="rex-form-text">
+									<label for="seo_title_attribute">' . $I18N->msg('rexseo42_seopage_title_attribute') . '</label>
+									<input type="text" value="' . $seoData['seo_title_attribute'] . '" name="seo_title_attribute" id="seo_title_attribute" class="rex-form-text" />
+								</p>
+							</div>
+
+							<div class="rex-form-row">
+								<p class="rex-form-text">
+									<label for="seo_alt_attribute">' . $I18N->msg('rexseo42_seopage_alt_attribute') . '</label>
+									<input type="text" value="' . $seoData['seo_alt_attribute'] . '" name="seo_alt_attribute" id="seo_alt_attribute" class="rex-form-text" />
 								</p>
 							</div>
 

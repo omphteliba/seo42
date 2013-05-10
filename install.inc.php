@@ -24,7 +24,7 @@ foreach ($disable_addons as $a) {
 if (count($error) == 0) {
 	$sql = new rex_sql();
 	//$sql->debugsql = true;
-	$sql->setQuery('ALTER TABLE `' . $REX['TABLE_PREFIX'] . 'article` ADD `seo_title` TEXT, ADD `seo_description` TEXT, ADD `seo_keywords` TEXT, ADD `seo_custom_url` TEXT, ADD `seo_canonical_url` TEXT, ADD `seo_noindex` VARCHAR(1), ADD `seo_ignore_prefix` VARCHAR(1)');
+	$sql->setQuery('ALTER TABLE `' . $REX['TABLE_PREFIX'] . 'article` ADD `seo_title` TEXT, ADD `seo_description` TEXT, ADD `seo_keywords` TEXT, ADD `seo_custom_url` TEXT, ADD `seo_canonical_url` TEXT, ADD `seo_noindex` VARCHAR(1), ADD `seo_ignore_prefix` VARCHAR(1), ADD `seo_title_attribute` TEXT, ADD `seo_alt_attribute` TEXT, ADD `seo_menu_title` TEXT');
 
 	// if adding/removing db fields here, check also for uninstall.inc.php and rexseo42_utils::afterDBImport()
 

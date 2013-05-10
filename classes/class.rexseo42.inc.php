@@ -462,4 +462,16 @@ class rexseo42 {
 	public static function getAnswer() {
 		return '42';
 	}
+
+	public static function getMenuTitle() {
+		return htmlspecialchars(self::$curArticle->getValue('seo_menu_title'));
+	}
+
+	public static function getAltAttribute() {
+		return htmlspecialchars(self::$curArticle->getValue('seo_alt_attribute'));
+	}
+
+	public static function getTitleAttribute() {
+		return htmlspecialchars(self::$curArticle->getValue('seo_title_attribute'));
+	}
 }
