@@ -50,8 +50,8 @@ if ($func == "do_copy") {
 
 		// this is for non-ww to www redirect
 		if (rex_request('www_redirect', 'int') == 1) {
-			$wwwRedirect1 = '#RewriteCond %{HTTP_HOST} !^www\. [NC]';
-			$wwwRedirect2 = '#RewriteRule (.*) http://www.%{HTTP_HOST}/$1 [R=301,L]';
+			$wwwRedirect1 = '#RewriteCond %{HTTP_HOST} ^[^.]+\.[^.]+$';
+			$wwwRedirect2 = '#RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [L,R=301]';
 	
 			$content = str_replace($wwwRedirect1, ltrim($wwwRedirect1, '#'), $content);
 			$content = str_replace($wwwRedirect2, ltrim($wwwRedirect2, '#'), $content);

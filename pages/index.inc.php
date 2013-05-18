@@ -1,12 +1,19 @@
 <?php
+
+if (isset($REX['USER']) && !$REX['USER']->isAdmin() && $REX['USER']->hasPerm('rexseo42[tools_only]')) {
+	$startSubpage = 'tools';
+} else {
+	$startSubpage = 'welcome';
+}
+
 $myself = rex_request('page', 'string');
-$subpage = rex_request('subpage', 'string')!='' ? rex_request('subpage', 'string'): 'welcome';
+$subpage = rex_request('subpage', 'string') != '' ? rex_request('subpage', 'string') : $startSubpage;
 $chapter = rex_request('chapter', 'string');
 $func = rex_request('func', 'string');
 $section_id = rex_request('section_id', 'string');
 $section_class = rex_request('section_class', 'string');
 $highlight = rex_request('highlight', 'string');
-$myroot = $REX['INCLUDE_PATH'].'/addons/'.$myself;
+$myroot = $REX['INCLUDE_PATH'] . '/addons/' . $myself;
 
 // includes
 require_once($myroot.'/classes/class.rexseo_rewrite.inc.php');
@@ -19,13 +26,13 @@ rex_title($REX['ADDON']['name'][$myself] . ' <span style="font-size:14px; color:
 
 // subpages
 switch($subpage){
-	case'':
-		$subpage = 'welcome';
-	case'welcome':
-	case'options':
-	case'tools':
-	case'setup':
-	case'help':
+	case '':
+		$subpage = $startSubpage;
+	case 'welcome':
+	case 'options':
+	case 'tools':
+	case 'setup':
+	case 'help':
 		$local_path = '/addons/' . $myself . '/pages/';
 		break;
 	default:

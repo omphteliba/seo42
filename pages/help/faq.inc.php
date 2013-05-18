@@ -15,6 +15,9 @@
 <h2><?php echo $I18N->msg('rexseo42_help_faq02a', $REX['ADDON']['name']['rexseo42']); ?></h2>
 <p><?php echo $I18N->msg('rexseo42_help_faq02b'); ?></p>
 
+<h2><?php echo $I18N->msg('rexseo42_help_faq19a'); ?></h2>
+<p><?php echo $I18N->msg('rexseo42_help_faq19b'); ?></p>
+
 <h2><?php echo $I18N->msg('rexseo42_help_faq04a'); ?></h2>
 <p><?php echo $I18N->msg('rexseo42_help_faq04b'); ?></p>
 

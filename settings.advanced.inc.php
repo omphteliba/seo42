@@ -22,6 +22,9 @@ $REX['ADDON']['rexseo42']['settings']['seo_friendly_image_manager_urls'] = true;
 // default title delimiter (including whitespace chars) for seperating name of website and page title
 $REX['ADDON']['rexseo42']['settings']['title_delimiter'] = ' | ';
 
+// hides the no prefix/suffix checkbox in seopage if true. only necessary if a different title schema is used and therefore no prefix/suffix checkbox is needed
+$REX['ADDON']['rexseo42']['settings']['hide_no_prefix_checkbox'] = false;
+
 // if true seopage will be only visible at start article of website. also the frontend links will all point to start article and sitemap.xml will show only one url
 $REX['ADDON']['rexseo42']['settings']['one_page_mode'] = false;
 

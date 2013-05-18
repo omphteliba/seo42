@@ -1,4 +1,4 @@
-# PREVENT DIRECTORY LISTING
+# PREVENT DIRECTORY LISTING (COMMENT OUT IF YOU GET SERVER ERROR 500)
 Options -Indexes
 
 <IfModule mod_rewrite.c>
@@ -6,9 +6,9 @@ Options -Indexes
 	RewriteEngine On
 	RewriteBase /
 
-	# REDIRECT NON-WWW TO WWW
-	#RewriteCond %{HTTP_HOST} !^www\. [NC]
-	#RewriteRule (.*) http://www.%{HTTP_HOST}/$1 [R=301,L]
+	# REDIRECT NON-WWW TO WWW (SUBDOMAINS WON'T BE AFFECTED)
+	#RewriteCond %{HTTP_HOST} ^[^.]+\.[^.]+$
+	#RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [L,R=301]
 
 	# REDIRECT SITEMAP.XML TO REXSEO SITEMAP FUNCTION
 	RewriteRule ^sitemap\.xml$ index.php?rexseo_func=sitemap [NC,L]

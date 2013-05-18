@@ -1,3 +1,5 @@
+rexseo42 = REXSEO42
+
 rexseo42_help_message = Ein intergalaktischer Fork des original RexSEO AddOns für REDAXO mit alternativer Benutzerführung und noch weiterer SEO-Goodies...
 rexseo42_welcome = Willkommen
 rexseo42_settings = Einstellungen
@@ -71,7 +73,7 @@ rexseo42_setup_step3 = Schritt 3: Template ergänzen
 rexseo42_setup_step3_msg1 = Zuletzt ergänzen Sie den Head-Bereich Ihres Templates wie folgt:
 rexseo42_setup_url_alert = URL dieser Website muss mit "http://" beginnen und mit "/" enden.
 rexseo42_setup_htaccess_alert = Im Hauptverzeichnis von REDAXO existiert bereits eine .htaccess Datei.\r\nWollen Sie diese überschreiben?\r\n\r\nHinweis: Ein Backup der Datei wird in /rexseo42/backup/ gespeichert.
-rexseo42_setup_codeexamples = Bitte nutzen Sie außerdem die bereitgestellten Methoden aus den <a href="index.php?page=rexseo42&subpage=help&chapter=codeexamples">Codebeispielen</a>...
+rexseo42_setup_codeexamples = Bitte nutzen Sie außerdem die bereitgestellten PHP-Methoden aus den <a href="index.php?page=rexseo42&subpage=help&chapter=codeexamples">Codebeispielen</a>...
 rexseo42_setup_rewritebase = RewriteBase automatisch anpassen: <i>RewriteBase /{0}</i>
 rexseo42_setup_subdir_hint = (Bitte Unterordner mit angeben)
 rexseo42_setup_rewritebase_alert = Bitte folgende Anpassung in der .htaccess Datei vornehmen:
@@ -82,6 +84,7 @@ rexseo42_seopage_title = Titel
 rexseo42_seopage_description = Beschreibung
 rexseo42_seopage_keywords = Suchbegriffe
 rexseo42_seopage_title_noprefix = Kein Prefix
+rexseo42_seopage_title_nosufix = Kein Suffix
 rexseo42_seopage_chars = Zeichen
 rexseo42_seopage_words = Begriffe
 rexseo42_seopage_extended_section = Erweitert
@@ -177,6 +180,9 @@ rexseo42_help_faq15b = Kein Problem ;) Einfach das Setup von hinten nach vorne d
 
 rexseo42_help_faq16a = Wie lautet die Antwort auf die Frage aller Fragen nach dem Leben, dem Universum und dem ganzen Rest?
 rexseo42_help_faq16b = 42
+
+rexseo42_help_faq19a = Mein Webserver meldet einen 500 Server Error?!
+rexseo42_help_faq19b = Vermutlich liegt es an der Zeile <code>Options -Indexes</code> in der .htaccess Datei. Einfach diese Zeile auskommentieren.
 
 rexseo42_help_debug = Debug
 rexseo42_help_debug_desc = Mit dieser Methode kann man detaillierte Debug-Informationen zum aktuellen Artikel abrufen:

@@ -109,7 +109,7 @@ class rexseo42 {
 		return htmlspecialchars(self::$curArticle->getValue('seo_keywords'));
 	}
 
-	public static function getRobotRules() {
+	public static function hasNoIndexFlag() {
 		$startArticle = OOArticle::getArticleById(self::$startArticleID);
 
 		if (OOArticle::isValid($startArticle) && $startArticle->getValue('seo_noindex') == '1') {
@@ -117,8 +117,16 @@ class rexseo42 {
 		} else {
 			$noIndexSite = false;
 		}
-	
+
 		if (self::$curArticle->getValue('seo_noindex') == '1' || $noIndexSite) { 
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public static function getRobotRules() {
+		if (self::hasNoIndexFlag()) { 
 			$robots = "noindex";
 		} else {
 			$robots = "index";

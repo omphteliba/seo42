@@ -3,13 +3,14 @@
 // register addon
 $REX['ADDON']['rxid']['rexseo42'] = '0';
 $REX['ADDON']['name']['rexseo42'] = 'REXSEO42';
-$REX['ADDON']['version']['rexseo42'] = '1.1.42+';
+$REX['ADDON']['version']['rexseo42'] = '1.2.0';
 $REX['ADDON']['author']['rexseo42'] = 'Markus Staab, Wolfgang Huttegger, Dave Holloway, Jan Kristinus, jdlx, RexDude';
 $REX['ADDON']['supportpage']['rexseo42'] = 'forum.redaxo.de';
 $REX['ADDON']['perm']['rexseo42'] = 'rexseo42[]';
 
 // permissions
 $REX['PERM'][] = 'rexseo42[]';
+$REX['PERM'][] = 'rexseo42[tools_only]';
 $REX['EXTPERM'][] = 'rexseo42[seo_default]';
 $REX['EXTPERM'][] = 'rexseo42[seo_extended]';
 
@@ -36,13 +37,21 @@ if ($REX['REDAXO']) {
 	$I18N->appendFile($REX['INCLUDE_PATH'] . '/addons/rexseo42/lang/');
 
 	// subpages
-	$REX['ADDON']['rexseo42']['SUBPAGES'] = array(
-		array('', $I18N->msg('rexseo42_welcome')),
-		array('tools', $I18N->msg('rexseo42_tools')),
-		array('options', $I18N->msg('rexseo42_settings')),
-		array('setup', $I18N->msg('rexseo42_setup')),
-		array('help', $I18N->msg('rexseo42_help'))
-	);
+	if (isset($REX['USER']) && !$REX['USER']->isAdmin() && $REX['USER']->hasPerm('rexseo42[tools_only]')) {
+		// add tools page only
+		$REX['ADDON']['rexseo42']['SUBPAGES'] = array(
+			array('', $I18N->msg('rexseo42_tools'))
+		);
+	} else {
+		// add all pages 
+		$REX['ADDON']['rexseo42']['SUBPAGES'] = array(
+			array('', $I18N->msg('rexseo42_welcome')),
+			array('tools', $I18N->msg('rexseo42_tools')),
+			array('options', $I18N->msg('rexseo42_settings')),
+			array('setup', $I18N->msg('rexseo42_setup')),
+			array('help', $I18N->msg('rexseo42_help'))
+		);
+	}
 
 	// add css/js files to page header
 	if (rex_request('page') == 'rexseo42') {
@@ -66,7 +75,7 @@ if ($REX['REDAXO']) {
 		rex_register_extension('PAGE_CONTENT_MENU', 'rexseo42_utils::modifyFrontendLinkInPageContentMenu');
 	}
 
-	// check for missing db field after db import
+	// check for missing db fields after db import
 	if (!$REX['SETUP']) {
 		rex_register_extension('A1_AFTER_DB_IMPORT', 'rexseo42_utils::afterDBImport');
 	}
