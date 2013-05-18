@@ -357,7 +357,10 @@ class rexseo42 {
 		$out .= self::getDebugInfoRow('rexseo42::getImageTag', array('image.png', 'rex_mediapool_detail', '150', '100'));
 		$out .= self::getDebugInfoRow('rexseo42::getImageManagerUrl', array('image.png', 'rex_mediapool_detail'));
 		$out .= self::getDebugInfoRow('rexseo42::getAnswer');
-
+		$out .= self::getDebugInfoRow('rexseo42::getLinkText');
+		$out .= self::getDebugInfoRow('rexseo42::getAltAttribute');
+		$out .= self::getDebugInfoRow('rexseo42::getTitleAttribute');
+	
 		$out .= '</table>';
 
 		$out .= '<h2>Settings</h2>';
