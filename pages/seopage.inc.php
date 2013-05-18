@@ -81,11 +81,11 @@ if (rex_post('saveseo', 'boolean')) {
 	// extra stuff
 	$titleAttribute = rexseo42_utils::sanitizeString(rex_post('seo_title_attribute'));
 	$altAttribute = rexseo42_utils::sanitizeString(rex_post('seo_alt_attribute'));
-	$menuTitle = rexseo42_utils::sanitizeString(rex_post('seo_menu_title'));
+	$linkText = rexseo42_utils::sanitizeString(rex_post('seo_link_text'));
 
 	$sql->setValue('seo_title_attribute', $titleAttribute);
 	$sql->setValue('seo_alt_attribute', $altAttribute);
-	$sql->setValue('seo_menu_title', $menuTitle);
+	$sql->setValue('seo_link_text', $linkText);
 
 	// do db update
 	if ($sql->update()) {
@@ -183,8 +183,8 @@ echo '
 
 							<div class="rex-form-row">
 								<p class="rex-form-text">
-									<label for="seo_menu_title">' . $I18N->msg('rexseo42_seopage_menu_title') . '</label>
-									<input type="text" value="' . $seoData['seo_menu_title'] . '" name="seo_menu_title" id="seo_menu_title" class="rex-form-text" />
+									<label for="seo_link_text">' . $I18N->msg('rexseo42_seopage_link_text') . '</label>
+									<input type="text" value="' . $seoData['seo_link_text'] . '" name="seo_link_text" id="seo_link_text" class="rex-form-text" />
 								</p>
 							</div>
 

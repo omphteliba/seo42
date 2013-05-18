@@ -96,7 +96,7 @@ rexseo42_seopage_canonical_alert = Die Canonical URL muss mit "http://" beginnen
 
 rexseo42_seopage_title_attribute = Titel-Attribut
 rexseo42_seopage_alt_attribute = Alt-Attribut
-rexseo42_seopage_menu_title = Menü-Titel
+rexseo42_seopage_link_text = Link-Text
 
 rexseo42_help_chapter_faq = FAQ
 rexseo42_help_chapter_codeexamples = Codebeispiele

@@ -471,8 +471,8 @@ class rexseo42 {
 		return '42';
 	}
 
-	public static function getMenuTitle() {
-		return htmlspecialchars(self::$curArticle->getValue('seo_menu_title'));
+	public static function getLinkText() {
+		return htmlspecialchars(self::$curArticle->getValue('seo_link_text'));
 	}
 
 	public static function getAltAttribute() {
