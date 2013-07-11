@@ -1,6 +1,10 @@
 REXSEO42 - Changelog
 ====================
 
+### Version 2.0.0
+
+* Redirects Plugin hinzugefügt um 301 Weiterleitungen komfortabel über das Backend anlegen zu können. Bitte Urls immer mit einem Splash beginnen, die Ziel Url kann aber auch mit http:// beginnen. Plugin ist Website Manager kompatibel.
+
 ### Version 1.2.1 - 21. Mai 2013
 
 * Fixed: Es kam ein PHP-Error wenn kein Artikel vorhanden

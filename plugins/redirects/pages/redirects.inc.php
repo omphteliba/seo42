@@ -51,7 +51,7 @@ if ($func == '') {
 	$list->setNoRowsMessage($I18N->msg('rexseo42_redirect_no_sytles_available'));
 	$list->setCaption($I18N->msg('rexseo42_redirect_list_of_redirects'));
 	$list->addTableAttribute('summary', $I18N->msg('rexseo42_redirect_list_of_redirects'));
-	$list->addTableColumnGroup(array(40, 40, 300, 300, 80));
+	$list->addTableColumnGroup(array(40, 40, 300, 300, 80, 80));
 
 	$list->setColumnLabel('id', $I18N->msg('rexseo42_redirect_id'));
 	$list->setColumnLabel('source_url', $I18N->msg('rexseo42_redirect_source_url'));

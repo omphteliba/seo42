@@ -18,6 +18,7 @@ Features
 Verfügbare Plugins
 ------------------
 
+* `redirects` von RexDude (ist beigelegt, siehe auch Hinweise)
 * `url_generate` von tbaddade: https://github.com/tbaddade/redaxo_plugin_url_generate
 
 Hinweise
@@ -30,6 +31,7 @@ Hinweise
 * Geändertes Verhalten für REDAXO Unterordner-Installationen. Bitte FAQ in der Hilfe des AddOns anschauen für weitere Infos.
 * Wenn der Webserver einen 500 Server Error meldet die Zeile `Options -Indexes` in der `.htaccess` auskommentieren.
 * `$REX["MOD_REWRITE"]` braucht nicht mehr auf `true` gesetzt werden (z.B. über die System-Page von REDAXO). Wenn REXSEO42 aktiv, wirds automatisch gesetzt. Option um den Rewriter aber trotzdem auszuschalten ist geplannt :)
+* Redirects Plugin: bitte Urls immer mit einem Splash beginnen, die Ziel Url kann aber auch mit http:// beginnen. Plugin ist Website Manager kompatibel.
 
 Changelog
 ---------
