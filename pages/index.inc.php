@@ -36,7 +36,7 @@ switch($subpage){
 		$local_path = '/addons/' . $myself . '/pages/';
 		break;
 	default:
-		$local_path = '/addons/' . $myself . '/plugins/' . $subpage . '/';
+		$local_path = '/addons/' . $myself . '/plugins/' . $subpage . '/pages/';
 }
 
 require $REX['INCLUDE_PATH'] . $local_path . $subpage . '.inc.php';

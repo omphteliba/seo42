@@ -48,7 +48,7 @@ class rexseo42_utils {
 		rexseo42::initArticle($REX['ARTICLE_ID']);
 
 		// set noindex header for robots if current article has noindex flag
-		if (!$REX['REDAXO'] && rexseo42::hasNoIndexFlag()) {
+		if (!$REX['REDAXO'] && rexseo42::isArticleValid() && rexseo42::hasNoIndexFlag()) {
 			header('X-Robots-Tag: noindex, noarchive');
 		}
 

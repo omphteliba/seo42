@@ -1,14 +1,18 @@
 REXSEO42 - Changelog
 ====================
 
-### Version 1.2.0 - 18.Mai 2013
+### Version 1.2.1 - 21. Mai 2013
+
+* Fixed: Es kam ein PHP-Error wenn kein Artikel vorhanden
+
+### Version 1.2.0 - 18. Mai 2013
 
 * Neues Plugin `url_generate` von tbaddade in die README.md mit aufgenommen
 * Neuer FAQ Eintrag wegen möglichen 500 Server Error, siehe auch Hinweise in der README.md
-* Neues Recht: `rexseo42[tools_only]` für Zugriff auf die Tools-Page für Nicht-Admins (`rexseo42[]` muss mitausgewählt werden)
+* Neues Recht: `rexseo42[tools_only]` für Zugriff auf die Tools-Page für Nicht-Admins (`rexseo42[]` muss mit ausgewählt werden)
 * Wenn ein Artikel nicht indiziert werden soll wird zusätzl. noch ein `X-Robots Header` ausgegeben.
-* Prefix/Suffix Unterscheidung für die Checkbox in der SEO-Page inkl. Option 'hide_no_prefix_checkbox' um die Checkbox zu verstecken, wenn anderes Titelschema benötigt
-* Beim WWW-Redirect in der `.htaccess` Datei werden jetzt Sudomains ausgespart (wichtig für Website Manager AddOn)
+* Prefix/Suffix Unterscheidung für die Checkbox in der SEO-Page inkl. Option `hide_no_prefix_checkbox` um die Checkbox zu verstecken, wenn anderes Titelschema benötigt
+* Beim WWW-Redirect in der `.htaccess` Datei werden jetzt Sudomains ausgeklammert (wichtig für Website Manager AddOn)
 * `ignore_root_cats` Option verbessert
 * Fixed #49: Wenn die Url einen Trennstrich hatte, wurde fälschlicherweise ein Unterordner entdeckt
 * RewriteRules für Website Manager Addon verbessert

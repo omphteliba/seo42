@@ -1,0 +1,20 @@
+rexseo42_redirect_id = ID
+rexseo42_redirect_deleted = Redirect wurde gelöscht
+rexseo42_redirect_no_sytles_available = Keine Redirects vorhanden
+rexseo42_redirect_list_of_redirects = Liste der angelegten Redirects
+rexseo42_redirect_create = Redirect erstellen
+rexseo42_redirect_functions = Funktionen
+rexseo42_redirect_delete = löschen
+rexseo42_redirect_delete_confirm = Löschen?
+rexseo42_redirect_edit = bearbeiten
+rexseo42_redirect_redirect_edit = Redirect bearbeiten
+rexseo42_redirect_redirect_add = Redirect anlegen
+rexseo42_redirect_redirect_exists = Eine Redirect mit dieser ID existiert bereits!
+rexseo42_redirect_name = Name 
+rexseo42_redirect_source_url = Quell-Url
+rexseo42_redirect_target_url = Ziel-Url
+rexseo42_redirect = Redirect
+rexseo42_redirect_not_available = Redirect nicht vorhanden!
+rexseo42_redirect_none = <keins>
+rexseo42_redirect_help = Redirects Plugin für REXSEO42
+

@@ -3,7 +3,7 @@
 // register addon
 $REX['ADDON']['rxid']['rexseo42'] = '0';
 $REX['ADDON']['name']['rexseo42'] = 'REXSEO42';
-$REX['ADDON']['version']['rexseo42'] = '1.2.0';
+$REX['ADDON']['version']['rexseo42'] = '1.2.1';
 $REX['ADDON']['author']['rexseo42'] = 'Markus Staab, Wolfgang Huttegger, Dave Holloway, Jan Kristinus, jdlx, RexDude';
 $REX['ADDON']['supportpage']['rexseo42'] = 'forum.redaxo.de';
 $REX['ADDON']['perm']['rexseo42'] = 'rexseo42[]';
@@ -43,10 +43,17 @@ if ($REX['REDAXO']) {
 			array('', $I18N->msg('rexseo42_tools'))
 		);
 	} else {
-		// add all pages 
+		// add subpages
 		$REX['ADDON']['rexseo42']['SUBPAGES'] = array(
 			array('', $I18N->msg('rexseo42_welcome')),
-			array('tools', $I18N->msg('rexseo42_tools')),
+			array('tools', $I18N->msg('rexseo42_tools'))
+		);
+
+		if (OOPlugin::isAvailable('rexseo42', 'redirects')) {
+			array_push($REX['ADDON']['rexseo42']['SUBPAGES'], array('redirects', $I18N->msg('rexseo42_redirects')));
+		}
+
+		array_push($REX['ADDON']['rexseo42']['SUBPAGES'], 
 			array('options', $I18N->msg('rexseo42_settings')),
 			array('setup', $I18N->msg('rexseo42_setup')),
 			array('help', $I18N->msg('rexseo42_help'))

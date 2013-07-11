@@ -72,6 +72,14 @@ class rexseo42 {
 		self::$curArticle = OOArticle::getArticleById($articleId);
 	}
 
+	public static function isArticleValid() {
+		if (is_object(self::$curArticle)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	public static function getBaseUrl() {
 		return self::$serverUrl;
 	}

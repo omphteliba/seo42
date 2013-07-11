@@ -65,7 +65,7 @@ class rexseo42_ex extends rexseo42
 }
 
 // ' . $I18N->msg('rexseo42_help_codeexamples_ex6_comment3') . '
-echo rexseo42_ex::getTitel(); // ' . $I18N->msg('rexseo42_help_codeexamples_ex6_comment4') . '
+echo rexseo42_ex::getTitle(); // ' . $I18N->msg('rexseo42_help_codeexamples_ex6_comment4') . '
 echo rexseo42_ex::getDescription();
 echo rexseo42_ex::getKeywords();
 ?>';
