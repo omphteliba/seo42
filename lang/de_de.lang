@@ -18,7 +18,7 @@ rexseo42_dbfields_readded = {0}: Fehlende DB-Felder des AddOns wurden hinzugefü
 rexseo42_dbfields_readded_check_setup = {0}: Bitte überprüfen Sie ob das Setup (Schritt 3) erneut durchgeführt werden muss.
 rexseo42_check_lang_msg = {0}: Bitte überprüfen und aktualisieren Sie ggf. auch die "settings.lang.inc.php" Datei.
 
-rexseo42_tools_caption = SEO Tools
+rexseo42_tools_caption = SEO Web Tools
 rexseo42_tool1 = Google Index dieser Website anzeigen
 rexseo42_tool1_desc = Überprüfen Sie wie Google Ihre Website {0} indiziert hat.
 rexseo42_tool2 = Google Submit Url
