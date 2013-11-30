@@ -4,6 +4,13 @@
 // **  DELETE REDAXO CACHE AFTER YOU MADE CHANGES TO THIS FILE!  **
 // ****************************************************************
 
+// MULTIDOMAIN MODE
+// set to true if you want to have seperate domains for each clang
+// each langauge needs then $REX['ADDON']['seo42']['settings']['lang'][x]['url'] setting
+// TODO: url manipulation, full_urls option, sitemap, (auto) redirects, clean lang file and some other stuff i might have forgotten
+
+$REX['ADDON']['seo42']['settings']['multidomain_mode'] = true;
+
 // GLOBAL SPECIAL CHAR REWRITE
 // used for rewriting special chars that are language dependent. valid for all languages.
 // separate values by | (pipe) symbol
@@ -27,19 +34,21 @@ $REX['ADDON']['seo42']['settings']['urlencode_whitespace_replace']  = '_';
 // special chars language tables: http://unicode.e-workers.de/
 // collection of language presets: https://github.com/RexDude/seo42/issues/61
 
+$REX['ADDON']['seo42']['settings']['lang'][0]['url'] = 'http://addonfactory.local/';
 $REX['ADDON']['seo42']['settings']['lang'][0]['code'] = 'de';
 $REX['ADDON']['seo42']['settings']['lang'][0]['original_name'] = 'deutsch';
 $REX['ADDON']['seo42']['settings']['lang'][0]['rewrite_mode'] = SEO42_REWRITEMODE_SPECIAL_CHARS;
 $REX['ADDON']['seo42']['settings']['lang'][0]['special_chars'] = 'Ä|ä|Ö|ö|Ü|ü|ß|&';
 $REX['ADDON']['seo42']['settings']['lang'][0]['special_chars_rewrite'] = 'Ae|ae|Oe|oe|Ue|ue|ss|und';
 
-/*
+$REX['ADDON']['seo42']['settings']['lang'][1]['url'] = 'http://addonfactory2.local/';
 $REX['ADDON']['seo42']['settings']['lang'][1]['code'] = 'en';
 $REX['ADDON']['seo42']['settings']['lang'][1]['original_name'] = 'english';
 $REX['ADDON']['seo42']['settings']['lang'][1]['rewrite_mode'] = SEO42_REWRITEMODE_SPECIAL_CHARS;
 $REX['ADDON']['seo42']['settings']['lang'][1]['special_chars'] = '&';
 $REX['ADDON']['seo42']['settings']['lang'][1]['special_chars_rewrite'] = 'and';
 
+/*
 $REX['ADDON']['seo42']['settings']['lang'][2]['code'] = 'el';
 $REX['ADDON']['seo42']['settings']['lang'][2]['original_name'] = 'ελληνικά';
 $REX['ADDON']['seo42']['settings']['lang'][2]['rewrite_mode'] = SEO42_REWRITEMODE_URLENCODE;

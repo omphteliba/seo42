@@ -31,6 +31,9 @@ class seo42_utils {
 	public static function init($params) {
 		global $REX;
 
+		// domain check (only if multidomain mode is on)
+		self::checkForClangDomain();
+
 		// init globals
 		seo42::init();
 
@@ -792,5 +795,28 @@ class seo42_utils {
 		$sql = rex_sql::factory();
 		//$sql->debugsql = true;
 		$sql->setQuery('UPDATE ' . $REX['TABLE_PREFIX'] . 'article SET seo_title = "", seo_description = "", seo_keywords = "", seo_custom_url = "", seo_canonical_url = "", seo_noindex = "", seo_ignore_prefix = "" WHERE clang = ' . $newClangId);
+	}
+
+	public static function checkForClangDomain() {
+		global $REX;
+
+		if (!$REX['REDAXO'] && $REX['ADDON']['seo42']['settings']['multidomain_mode']) {		
+			$curServerUrl = self::getCurrentProtocol() . '://' . $_SERVER['SERVER_NAME'] . '/';
+
+			foreach ($REX['ADDON']['seo42']['settings']['lang'] as $clangId => $value) {
+				if (isset($REX['ADDON']['seo42']['settings']['lang'][$clangId]['url']) && ($curServerUrl == $REX['ADDON']['seo42']['settings']['lang'][$clangId]['url'])) {
+					$REX['CUR_CLANG'] = $clangId;
+					$REX['SERVER'] = $REX['ADDON']['seo42']['settings']['lang'][$clangId]['url'];
+				}			
+			}
+		}
+	}
+
+	public static function getCurrentProtocol() {
+		if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
+			return 'https';
+		} else {
+			return 'http';
+		}
 	}
 }
