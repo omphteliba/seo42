@@ -64,6 +64,11 @@ class seo42_utils {
 		// init current article
 		seo42::initArticle($REX['ARTICLE_ID']);
 
+		// do redirect for frontend if necessary
+		if (!$REX['REDAXO']) {
+			seo42_utils::redirect();
+		}
+
 		// controller
 		include($REX['INCLUDE_PATH'] . '/addons/seo42/controller.inc.php');
 
@@ -632,12 +637,14 @@ class seo42_utils {
 						$targetUrl = $REX['SEO42_REDIRECTS'][$requestUri];
 					}
 
-					if (strpos($targetUrl, 'http') === false) {
+					if (strpos($targetUrl, 'redaxo://') !== false) {
+						$location = seo42::getServerUrl()  . ltrim(self::replaceLinks($targetUrl), '/');
+					} else if (strpos($targetUrl, 'http') === false) {
 						$location = seo42::getServerUrl()  . ltrim($targetUrl, '/');
 					} else {
 						$location = $targetUrl;
 					}
-		
+	
 					header('HTTP/1.1 301 Moved Permanently');
 				 	header('Location: ' . $location);
 
@@ -646,6 +653,19 @@ class seo42_utils {
 			}
 		}
 	}
+
+	public static function replaceLinks($content) {
+		global $REX;
+
+		return preg_replace_callback(
+			'@redaxo://(\d+)(?:-(\d+))?/?@i',
+				create_function(
+					'$matches',
+					'return rex_getUrl($matches[1], isset($matches[2]) ? $matches[2] : '. (integer) $REX['CUR_CLANG'] .');'
+				),
+			$content
+			);
+  	}
 
 	public static function trimSubDir($string) {
 		return '/' . substr($string, strlen('/' . seo42::getServerSubDir()));

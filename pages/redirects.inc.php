@@ -158,11 +158,12 @@ jQuery(document).ready( function() {
 
 	jQuery('#rex-addon-editmode form').submit(function() {
 		var pat = /^https?:\/\//i;
+		var pat2 = /^redaxo:\/\//i;
 		var sourceUrl = jQuery('#source-url').val();
 		var targetUrl = jQuery('#target-url').val();
 
 		if (sourceUrl.charAt(0) == '/') {
-			if (pat.test(targetUrl) || targetUrl.charAt(0) == '/') {
+			if (pat.test(targetUrl) || targetUrl.charAt(0) == '/' || pat2.test(targetUrl)) {
 				return true;
 			} else {
 				alert('<?php echo $I18N->msg('seo42_redirect_targeturl_alert'); ?>');
