@@ -157,5 +157,17 @@ $REX['SEO42_LANG_PRESETS'] = array(
 		'special_chars_rewrite' => 'A|a|Oe|oe|Ae|ae|och',
 		'inherit_from_clang' => 0
 	),
+	array(
+		'original_name' => 'türk',
+		'code' => 'tr',
+		'region_code' => 'tr-TR',
+		'url_slug' => 'tr',
+		'hreflang' => 'tr',
+		'dir' => 'ltr',
+		'rewrite_mode' => SEO42_REWRITEMODE_SPECIAL_CHARS,
+		'special_chars' => 'Ç|ç|Ş|ş|Ğ|ğ|İ|ı|Ö|ö|Ü|ü|&',
+		'special_chars_rewrite' => 'C|c|S|s|G|g|I|i|O|o|U|u|ve',
+		'inherit_from_clang' => 0
+	),
 );
 
